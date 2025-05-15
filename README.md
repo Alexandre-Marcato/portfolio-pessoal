@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfólio - Alexandre Marcato
 
-## Getting Started
+![Portfólio Preview](public/images/preview-portfolio.png)
 
-First, run the development server:
+## 📝 Descrição
+
+Site de portfólio pessoal desenvolvido para apresentar minhas habilidades, projetos e experiência como Desenvolvedor Full Stack. Com design moderno e interativo, representa minha identidade profissional no universo digital.
+
+## 🚀 Tecnologias
+
+Este projeto foi desenvolvido com as seguintes tecnologias:
+
+- [Next.js](https://nextjs.org/)
+- [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Framer Motion](https://www.framer.com/motion/)
+
+## ✨ Características
+
+- **Design Responsivo**: Adaptado para dispositivos móveis, tablets e desktops
+- **Animações Fluidas**: Utilizando Framer Motion para transições suaves
+- **Tema Claro/Escuro**: Toggle de tema para melhor experiência do usuário
+- **Performance Otimizada**: Carregamento rápido e experiência fluida
+- **Seções Completas**: Home, Sobre, Projetos e Contato
+
+## 🔧 Instalação e Execução
 
 ```bash
+# Clone o repositório
+git clone https://github.com/Alexandre-Marcato/portfolio-pessoal.git
+
+# Acesse a pasta do projeto
+cd portfolio-pessoal
+
+# Instale as dependências
+npm install
+
+# Execute o projeto
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+O site estará disponível em `http://localhost:3000`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📁 Estrutura do Projeto
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+portfolio-pessoal/
+├── public/ # Arquivos estáticos (imagens, etc)
+├── src/ # Código fonte
+│ ├── app/ # Rotas e páginas
+│ ├── components/ # Componentes React
+│ └── providers/ # Provedores de contexto
+├── .next/ # Build gerado pelo Next.js
+└── ... # Arquivos de configuração
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## 📲 Contato
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- GitHub: [Alexandre-Marcato](https://github.com/Alexandre-Marcato)
+- LinkedIn: [Alexandre Marcato](https://www.linkedin.com/in/alexandre-marcato-998a00362/)
+- Instagram: [marcato.web](https://www.instagram.com/marcato.web/)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📄 Licença
+
+Este projeto está sob a licença MIT.
