@@ -1,6 +1,6 @@
 # Portfólio - Alexandre Marcato
 
-![Portfólio Preview](public/images/preview-portfolio.png)
+![Portfólio Preview](public/images/myperfil.jpeg)
 
 ## 📝 Descrição
 
