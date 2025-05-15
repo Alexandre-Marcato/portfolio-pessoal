@@ -1,8 +1,23 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #f8f9fc;
   --foreground: #171717;
+  --primary: #8b5cf6;
+  --primary-foreground: #ffffff;
+  --secondary: #f4f4f5;
+  --secondary-foreground: #18181b;
+  --accent: #7c3aed;
+  --accent-foreground: #ffffff;
+  --muted: #f4f4f5;
+  --muted-foreground: #71717a;
+  --code-bg: rgba(139, 92, 246, 0.05);
+  --code-color: #8b5cf6;
+  --code-keyword: #9333ea;
+  --code-string: #0d9488;
+  --code-function: #2563eb;
+  --code-comment: #71717a;
+  --code-opacity: 0.1;
 }
 
 @theme inline {
@@ -12,15 +27,179 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    overflow-x: hidden;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* Animação para código sendo digitado */
+@keyframes typeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.typing-line {
+  animation: typeIn 0.3s ease-out forwards;
+  white-space: pre-wrap;
+  overflow-x: hidden;
+}
+
+.code-background {
+  background-color: var(--code-bg);
+  border-radius: 8px;
+  padding: 16px;
+  font-family: var(--font-mono);
+}
+
+.code-animation {
+  opacity: var(--code-opacity);
+}
+
+.typing-line {
+  color: var(--code-color);
+}
+
+.typing-line .keyword {
+  color: var(--code-keyword);
+}
+
+.typing-line .string {
+  color: var(--code-string);
+}
+
+.typing-line .function {
+  color: var(--code-function);
+}
+
+.typing-line .comment {
+  color: var(--code-comment);
+  font-style: italic;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+}
+
+/* Estilos para animações de fundo */
+@keyframes floatAnimation {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes pulseAnimation {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes rotateAnimation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.wave-animation {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.wave-animation svg {
+  transform-origin: center;
+  animation: floatAnimation 15s ease-in-out infinite;
+}
+
+.wave-animation svg:nth-child(2) {
+  animation-delay: 2s;
+  animation-duration: 18s;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gradient-bg {
+  background: linear-gradient(-45deg, rgba(139, 92, 246, 0.5), rgba(99, 102, 241, 0.5), rgba(124, 58, 237, 0.5));
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+}
+
+/* Estilos para as partículas */
+canvas {
+  display: block !important;
+  pointer-events: none !important;
+  position: absolute !important;
+  width: 100% !important;
+  height: 100% !important;
+  top: 0 !important;
+  left: 0 !important;
+  z-index: 20 !important;
+}
+
+/* Adicionar camada de profundidade ao layout */
+.z-100 {
+  z-index: 100;
+}
+
+/* Melhorar contraste para texto sobre fundo animado */
+section {
+  position: relative;
+}
+
+section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(248, 249, 252, 0.3), rgba(248, 249, 252, 0.3));
+  z-index: 5;
+  pointer-events: none;
 }
